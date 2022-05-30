@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { Container, Stack, Text, Button } from "@chakra-ui/react";
+import { Container, Stack, Text, Button, Flex } from "@chakra-ui/react";
 
 export const Footer = () => {
   return (
@@ -9,10 +9,14 @@ export const Footer = () => {
         as={Stack}
         maxW={'6xl'}
         py={4}
+        mt={"auto"}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
-        align={{ base: 'center', md: 'center' }}>
+        align={{ base: 'center', md: 'center' }}
+        display={'flex'}
+        position={'relative'}
+        >
         <Stack direction={'row'} spacing={6}>
           <Button as={Link} to="/home">Home</Button>
           <Button as={Link} to="/chat">Chat</Button>

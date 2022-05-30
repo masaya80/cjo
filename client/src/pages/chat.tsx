@@ -11,6 +11,19 @@ import { User, Post, usePostsData } from '../hooks/usePostsget';
 
 export const Chat = () => {
   const auth = true;
+  const { loadingGet, loadingPost, loadingError, posts, serverDataGet, serverDataPost } = usePostsData();
+  const [text, setText] = useState('');
+
+  const handleInputChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const inputText = e.currentTarget.value;
+    setText(inputText);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    serverDataPost(text);
+    setText('');
+  };
 
   return (
     <div>
@@ -41,6 +54,18 @@ export const Chat = () => {
             </Heading>
           </Box>
         </VStack>
+        <Box as='form' bg={'white'} shadow='md' rounded={'md'} mb={8} onSubmit={handleSubmit} >
+            <Textarea
+              id="textarea"
+              onChange={handleInputChange}
+              value={text}
+              placeholder='投稿を入力してください'
+              size='md'
+              mt={4}
+            />
+            <Button mt={4} mb={2} colorScheme='teal' variant='solid'
+              isLoading={loadingPost} type="submit">投稿</Button>
+          </Box>
       </Box>
       <Footer />
     </div >
