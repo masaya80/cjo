@@ -37,11 +37,11 @@ export const Home = () => {
   return (
     <div>
       <Header authState={auth} />
-      <Box minH={'85vh'} bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Box minH={'85vh'} bg={useColorModeValue('green.50', 'green.800')}>
         <Box pt={8} px={4} display={{ md: 'flex' }} justifyContent={'space-between'} alignItems={'start'} maxW={'7xl'} margin={'auto'} >
           <VStack>
             <Box as={Link} bg='white' w='220px' top={'80px'} height={'250px'} rounded={'lg'} shadow='md' 
-            textAlign={'center'} flexDir={'column'} borderBottom={0} mb={4} to={'/profile'} >
+            textAlign={'center'} flexDir={'column'} borderBottom={0} mb={4} to={'/profile'} border={'2px'} borderColor={'gray.200'}>
               <Avatar
                 name="John Doe"
                 size={'md'}
@@ -58,7 +58,7 @@ export const Home = () => {
                 Linkedin User
               </Text>
             </Box>
-            <Box bg='white' w='220px' top={'80px'} height={'250px'} rounded={'lg'} shadow='md' textAlign={'center'} flexDir={'column'} borderBottom={0} mb={4} >
+            <Box bg='white' w='220px' top={'80px'} height={'250px'} rounded={'lg'} shadow='md' textAlign={'center'} flexDir={'column'} borderBottom={0} mb={4} border={'2px'} borderColor={'gray.200'}>
               <Heading as='h3' size='lg' color='black' textAlign='center'>
                 Tips
               </Heading>
@@ -66,8 +66,8 @@ export const Home = () => {
           </VStack>
           <Box as={Container} flexDir={'column'} maxW={'xl'} rounded={'md'}>
             {loadingGet ? loading() : companys.map(company => (
-              <Box bg='white' shadow='md' p={4} mb={6} rounded='md' key={company} >
-                <Link to={company}>
+              <Box bg='white' shadow='md' p={4} mb={6} rounded='md' key={company} border={'2px'} borderColor={'gray.200'} >
+                <Link to={'/projects'}>
                   <HStack mb={2} spacing='25px'>
                     <Image
                       alt="メルカリ"
@@ -103,13 +103,13 @@ export const Home = () => {
             ))}
           </Box>
           <VStack>
-            <Box w='220px' bg='white' shadow='md' rounded='md'>
+            <Box w='220px' bg='white' shadow='md' rounded='md' border={'2px'} borderColor={'gray.200'}>
               <Heading mt={2} as='h3' size='lg' color='gray.700' textAlign='center'>
                 Category
               </Heading>
               <VStack mt={4} mb={5} alignItems='center'>
                 {loadingGet ? loading() : categorys.map(category => (
-                  <Button as={Link} size='md' color='gray.700' to={category}>
+                  <Button as={Link} size='md' color='white' colorScheme='teal' variant='solid' to={category}>
                     {category}
                   </Button>
                 ))}

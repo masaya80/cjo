@@ -9,6 +9,8 @@ import { Signup } from './signup';
 // import { DetailSignup } from './detailsignup';
 // import { ForgotPassword } from './fogotpassword';
 // import { Posts } from './posts';
+import { Project } from './project';
+import { Categorys } from './category';
 import { Profile } from './profile';
 import { Chat } from './chat';
 import { NotSigned } from './notsigned';
@@ -25,8 +27,11 @@ export const App = () => {
         <Route path='/signup/email' element={<SignupEmail />} />
         <Route path='/signup/verifyemail' element={<VerifyEmail />} />
         <Route path='/signup/detail' element={<DetailSignup />} />
-        <Route path='/signin/forgotpassword' element={<ForgotPassword />} />
-        <Route path='/posts' element={<Posts />} /> */}
+        <Route path='/signin/forgotpassword' element={<ForgotPassword />} />*/}
+        <Route path='/projects' element={<Project />} /> 
+        <Route path='/category' element={<Categorys />} >
+          {/* <Route path=':id' element={<Category />} /> */}
+        </Route>
         <Route path='/chat' element={<Chat />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<Notfound />} />

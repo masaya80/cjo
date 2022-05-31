@@ -9,7 +9,7 @@ import { Footer } from '../components/footer';
 // import { useAuth } from '../hooks/useAuth';
 import { User, Post, usePostsData } from '../hooks/usePostsget';
 
-export const Profile = () => {
+export const Project = () => {
   const auth = true;
 
   return (
@@ -19,36 +19,9 @@ export const Profile = () => {
         <Box pt={8} px={4} display={{ md: 'flex' }} justifyContent={'space-between'} alignItems={'start'} maxW={'6xl'} margin={'auto'} >
           <Box w='70%' top={'80px'} height={'300px'} bg='white' rounded={'lg'} textAlign={'center'} flexDir={'column'}
             borderBottom={0} mb={4} border={'2px'} borderColor={'gray.100'} >
-            <Box w={'30%'} mt={4}>
-              <Avatar
-                name="John Doe"
-                size={'2xl'}
-                src={
-                  'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                }
-                mb={3}
-              />
-            </Box>
-            <Wrap>
-              <Box w={'30%'}>
-                <Heading textAlign='center' color={'black'} size='md'>
-                  Kai Mitsuzawa
-                </Heading>
-                <Text textAlign='center' color={'black'} size='md'>
-                  Security Engineer
-                </Text>
-              </Box>
-              <Image
-                alt="メルカリ"
-                boxSize={'30px'}
-                src={
-                  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fres.fashionsnap.com%2Fimage%2Fupload%2Fq_auto%2Cw_1088%2Fasset%2Farticle%2Fimages%2F2020%2F10%2Fmercarilogo20201030-000.jpg&f=1&nofb=1'
-                }
-              />
-              <Heading size='md' color='gray.700'>
-                メルカリ
-              </Heading>
-            </Wrap>
+            <Heading size='lg' mt={2}>
+              メルペイのセキュリティを強固にしたい
+            </Heading>
           </Box>
           <Box w='25%' height={'220px'} bg='white' rounded={'md'} border={'2px'} borderColor={'gray.100'} >
             <Heading mt={2} as='h3' size='md' color='black' textAlign='center'>
